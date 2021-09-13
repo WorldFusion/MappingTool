@@ -1,0 +1,28 @@
+
+
+-- iVar
+ https://github.com/andersen-lab/ivar
+
+-- MinGW
+pacman -S --noconfirm --needed base-devel mingw-w64-x86_64-toolchain mingw-w64-x86_64-zlib mingw-w64-x86_64-bzip2 mingw-w64-x86_64-xz mingw-w64-x86_64-curl
+
+
+build_script:
+ set HOME=.
+ set MSYSTEM=MINGW64
+ set PATH=C:/msys64/usr/bin;C:/msys64/mingw64/bin;%PATH%
+ git submodule update --init --recursive
+
+
+set LD_LIBRARY_PATH=$LD_LIBRARY_PATH;C:\works\Compile\htslib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/c/works/Compile/htslib
+
+-- htslib ’Ç‰Á
+autoreconf -i && ./configure --enable-werror --with-hts=/c/works/Compile/htslib CFLAGS='-g -O3' && make -j2
+
+autoreconf -i && ./configure --enable-werror CFLAGS='-g -O3' && make -j2
+
+
+
+
+sh configure --enable-werror CFLAGS='-g -O3'  --with-hts=/c/works/Compile/htslib  --prefix=/c/works/Compile/ivar/bin
