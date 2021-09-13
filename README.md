@@ -6,24 +6,24 @@ iVar(https://andersen-lab.github.io/ivar/html/manualpage.html)を利用し
 Windows 上で 簡単に操作できるよう UI を付けたツールです。
 
 Illumina Sequencer では Primer 情報があり、bed-file が得られる（はず）なので、
-マッピング結果から bed-file を利用したtrim が出来ないかと考えた。
+マッピング結果から bed-file を利用したtrim が出来ないかと考えた。  
 iVar が Corona Virus のシーケンスに利用されていたのでWindows でも容易に
-使えないかと考えたので 作ってみた。
-
-
-Reference fasta、Illumina Pair-end Sequence と、bed-file を入力として以下を出力します。
-１．Minimap2(https://github.com/lh3/minimap2)でマッピング
-２．iVar trim で マッピング結果(bam)をTrim 
-３．iVar variant で バリアント.tsv を出力
-４．samtools(http://www.htslib.org/) で Trimしたbam から Fastq を作成
-
+使えないかと考えたので 作ってみた。  
+  
+  
+Reference fasta、Illumina Pair-end Sequence と、bed-file を入力として以下を出力します。  
+１．Minimap2(https://github.com/lh3/minimap2)でマッピング  
+２．iVar trim で マッピング結果(bam)をTrim  
+３．iVar variant で バリアント.tsv を出力  
+４．samtools(http://www.htslib.org/) で Trimしたbam から Fastq を作成  
+  
 ## 使い方。
-このレポジトリをzip ファイルで取得（もしくは git clone）
-Windows PC の スペース、日本語などを含まないフォルダに解凍（or Clone）
+このレポジトリをzip ファイルで取得（もしくは git clone）  
+Windows PC の スペース、日本語などを含まないフォルダに解凍（or Clone）  
 iVarWrapper.exe をダブルクリックすると起動します。
-
-レジストリなどの登録はありません。
-解凍したフォルダを削除することでアンインストールとなります。
+  
+レジストリなどの登録はありません。  
+解凍したフォルダを削除することでアンインストールとなります。  
 
 ## 技術とか。
 Windows WPF
